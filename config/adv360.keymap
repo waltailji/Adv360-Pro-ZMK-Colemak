@@ -19,6 +19,16 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        mod_tap: mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_TAP";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -27,11 +37,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp EQUAL  &kp N1     &kp N2      &kp N3       &kp N4       &kp N5  &tog 1                                                    &mo 3          &kp N6  &kp N7       &kp N8       &kp N9          &kp N0         &kp MINUS
-&kp TAB    &kp Q      &kp W       &kp F        &kp P        &kp B   &none                                                     &none          &kp J   &kp L        &kp U        &kp Y           &kp SEMICOLON  &kp BSLH
-&kp ESC    &kp A      &hm LALT R  &hm LSHFT S  &hm LCTRL T  &kp G   &none      &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none          &kp M   &hm RCTRL N  &hm RSHFT E  &hm LEFT_ALT I  &kp O          &kp SQT
-&kp LSHFT  &kp Z      &kp X       &kp C        &kp D        &kp V                         &kp HOME      &kp PG_UP                            &kp K   &kp H        &kp COMMA    &kp DOT         &kp FSLH       &kp RSHFT
-&mo 2      &kp GRAVE  &kp CAPS    &kp LEFT     &kp RIGHT            &kp SPACE  &kp TAB    &kp END       &kp PG_DN  &kp ENTER  &kp BACKSPACE          &kp UP       &kp DOWN     &kp LBKT        &kp RBKT       &mo 2
+&kp EQUAL  &kp N1     &kp N2      &kp N3       &kp N4       &kp N5  &tog 1                                                           &mo 3          &kp N6  &kp N7       &kp N8       &kp N9          &kp N0         &kp MINUS
+&kp TAB    &kp Q      &kp W       &kp F        &kp P        &kp B   &none                                                            &none          &kp J   &kp L        &kp U        &kp Y           &kp SEMICOLON  &kp BSLH
+&kp ESC    &kp A      &hm LALT R  &hm LSHFT S  &hm LCTRL T  &kp G   &none             &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none          &kp M   &hm RCTRL N  &hm RSHFT E  &hm LEFT_ALT I  &kp O          &kp SQT
+&kp LSHFT  &kp Z      &kp X       &kp C        &kp D        &kp V                                &kp HOME      &kp PG_UP                            &kp K   &kp H        &kp COMMA    &kp DOT         &kp FSLH       &kp RSHFT
+&mo 2      &kp GRAVE  &kp CAPS    &kp LEFT     &kp RIGHT            &mod_tap 4 SPACE  &kp TAB    &kp END       &kp PG_DN  &kp ENTER  &kp BACKSPACE          &kp UP       &kp DOWN     &kp LBKT        &kp RBKT       &mo 2
             >;
         };
 
@@ -68,24 +78,26 @@
             >;
         };
 
-        extra1 {
-            display-name = "Red";
-            status = "reserved";
+        nav {
+            display-name = "nav";
+            bindings = <
+&none  &none  &kp F1        &kp F2    &kp F3     &kp F4     &kp F5                                      &none          &kp F6    &kp F7         &kp F8        &kp F9     &kp F10     &kp F11
+&none  &none  &none         &none     &none      &none      &none                                       &none          &none     &kp K_PASTE    &kp K_COPY    &kp K_CUT  &kp K_UNDO  &kp F12
+&none  &none  &kp LEFT_WIN  &kp LALT  &kp LSHFT  &kp LCTRL  &none   &none  &none      &none  &none      &none          &kp LEFT  &kp DOWN       &kp UP_ARROW  &kp RIGHT  &kp END     &none
+&none  &none  &none         &none     &none      &none                     &none      &none                            &kp HOME  &kp PAGE_DOWN  &kp PG_UP     &kp INS    &kp DELETE  &none
+&none  &none  &none         &none     &none                 &none   &none  &none      &none  &kp ENTER  &kp BACKSPACE            &none          &none         &none      &none       &none
+            >;
         };
 
-        extra2 {
-            display-name = "Purple";
-            status = "reserved";
-        };
-
-        extra3 {
-            display-name = "Cyan";
-            status = "reserved";
-        };
-
-        extra4 {
-            display-name = "Yellow";
-            status = "reserved";
+        layer_5 {
+            display-name = "nav";
+            bindings = <
+&none  &none  &none  &none  &none  &none  &none                                  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none                                  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none      &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                &none      &none                &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none         &none  &none  &none      &none  &none  &none         &none  &none  &none  &none  &none
+            >;
         };
     };
 };
