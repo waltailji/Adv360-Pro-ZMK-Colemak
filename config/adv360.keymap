@@ -83,6 +83,46 @@
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <56 57>;
         };
+
+        double_quote {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <41 42>;
+        };
+
+        single_quote {
+            bindings = <&kp SQT>;
+            key-positions = <42 43>;
+        };
+
+        grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <32 31>;
+        };
+
+        tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <31 30>;
+        };
+
+        forward_slash {
+            bindings = <&kp SLASH>;
+            key-positions = <55 56>;
+        };
+
+        backslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <56 57>;
+        };
+
+        equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <50 49>;
+        };
+
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <49 48>;
+        };
     };
 
     keymap {
