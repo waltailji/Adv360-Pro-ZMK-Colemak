@@ -124,12 +124,12 @@
 
         forward_slash {
             bindings = <&kp LESS_THAN>;
-            key-positions = <55 56>;
+            key-positions = <71 72>;
         };
 
         backslash {
             bindings = <&kp GREATER_THAN>;
-            key-positions = <56 57>;
+            key-positions = <72 73>;
         };
 
         equal {
