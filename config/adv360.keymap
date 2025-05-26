@@ -147,7 +147,14 @@
         command_palette: command_palette {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LEFT_WIN) &kp SPACE>;
+            bindings =
+                <&macro_press>,
+                <&kp LA(LEFT_WIN)>,
+                <&macro_tap>,
+                <&kp SPACE>,
+                <&macro_release>,
+                <&kp LA(LEFT_WIN)>;
+
             label = "COMMAND_PALETTE";
         };
     };
